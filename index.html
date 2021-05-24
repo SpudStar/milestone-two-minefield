@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <!--Metadata-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="minefield, minesweeper, mine, sweeper, game, gaming, explosion">
+        <meta name="description" content="The site for Minefield, a custom game of minesweeper.">
+        <meta name="author" content="Edward Stanley">
+        
+        <title>Minefield</title>
+
+        <!--Styling-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Righteous&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!--HTML code used for the header of the page------------------------------------------------------------>
+    <header class = "row no-gutters">
+        <!--HTML code used for the title logo of the page -->
+        <div id="logo-container" class = "col">
+            <a href="index.html"  id="logo">
+                <h1>Minefield</h1>
+            </a>
+            <div id="img-holder">
+                <img src="/assets/images/explosion.png" alt="Picture of half a cartoon explosion, for logo garnish." />
+            </div>
+        </div>
+        <!--HTML code used for the how to play link of the page -->
+        <nav id="link-to-rules-container" class = "col">
+            <a href="https://en.wikipedia.org/wiki/Minesweeper_(video_game)"  target="_blank" rel="noopener" aria-label="Click to go to an external page and learn about the rules of minesweeper!">
+                <h2>How to Play</h2>
+            </a>
+        </nav>
+    </header>
+
+    <!--HTML code used to structure the main game area of the page------------------------------------------------------------>
+    <section id="gameplay-area">
+        <div id="background-image">  <!--Div that contains the background camo image-->
+            <div id="game-container"> <!--Div that contains the minesweeper gameplay and user input containers-->
+                <div id="minefield-area"> <!--Div that contains the minesweeper gameplay-->
+                    <!--Left empty, it is filled by the javascript-->
+                </div>
+                <div id="status-area"> <!--Div that contains the user inputs and feedback-->
+                    <!--Div that contains the optional buttons for mobile user functionality-->
+                    <div id="selector" class = "row no-gutters">
+                        <div id="mobile-tile-selector" class="selector-button col" onclick="mobileFlagToTile();">
+                            <i class = "fa fa-mouse-pointer"></i>
+                        </div>   
+                        <div id="mobile-flag-selector" class="selector-button col" onclick="mobileTileToFlag();">
+                            <i class = "fa fa-flag"></i>
+                        </div>
+                    </div>
+                    <!--Div that contains the non interactable feedback for gameplay logic and user benefit-->
+                    <div id="stats-container">
+                        <div  class = "row no-gutters container">
+                            <div class = "col-7">
+                                <h6>Flagged:</h6>
+                            </div>
+                            <div class = "col-1">
+                                <i class = "fa fa-flag"></i>
+                            </div>
+                            <div class = "col-4">
+                                <p id="flagged-value">0</p>
+                            </div>
+                        </div>
+                        <div  class = "row no-gutters container">
+                            <div class = "col-7">
+                                <h6>Total Bombs:</h6>
+                            </div>
+                            <div class = "col-1">
+                                <i class = "fa fa-bomb"></i>
+                            </div>
+                            <div class = "col-4">
+                                <p id="bomb-total-value">0</p>
+                            </div>
+                        </div>
+                        <div  class = "row no-gutters container">
+                            <div class = "col-7">
+                                <h6>Tiles Left:</h6>
+                            </div>
+                            <div class = "col-1">
+                                <i class = "fa fa-square"></i>
+                            </div>
+                            <div class = "col-4">
+                                <p id="tiles-left-value">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Div that contains the customizable parameters for the user to alter-->
+                    <div id="options-container">
+                        <h6>Size:</h6>
+                        <div class = "row no-gutters container">
+                            <div class = "col">
+                                <button onclick = "increaseDimension();"><i class = "fa fa-caret-up pointer-button"></i></button>
+                            </div>
+                            <div class = "col">
+                                <p id="dimension-value">10</p>
+                            </div>
+                            <div class = "col">
+                                <button onclick = "decreaseDimension();"><i class = "fa fa-caret-down pointer-button"></i></button>
+                            </div>
+                        </div>
+                        <h6>Bombs:</h6>
+                        <div class = "row no-gutters container">
+                            <div class = "col">
+                                <button onclick = "increaseBombs();"><i class = "fa fa-caret-up pointer-button"></i></button>
+                            </div>
+                            <div class = "col">
+                                <p id="bomb-value">10</p>
+                            </div>
+                            <div class = "col">
+                                <button onclick = "decreaseBombs();"><i class = "fa fa-caret-down pointer-button"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Creates the button that starts a new game-->
+                    <button onclick = "newGame();"><h3>New Game</h3></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--HTML code used to structure the footer of the page------------------------------------------------------------>
+    <footer>
+        <div">
+            <h4><i class="fa fa-copyright"></i> Edward Stanley</h4>
+        </div>
+    </footer>
+
+    <!--Call to the javascript---------------------------------------------------------------------------------------->
+    <script src="assets/javascript/script.js"></script>
+</body>
+</html>
