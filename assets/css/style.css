@@ -192,6 +192,10 @@ i{ /*Helps styalise the icons when revealed*/
     height:20px;
 }
 
+.buttonContainer{ /*Adjusts the text size in the New Game button*/
+    font-size:50px;
+}
+
 /*CSS used in the footer*/
 footer{
     width:100%;
