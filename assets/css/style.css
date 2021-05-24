@@ -230,16 +230,16 @@ footer{
     }
 
     h1{ /*Reduces the title size*/
-        font-size:40px;
+        font-size:30px;
     }
 
     h2{ /*Reduces the how to play link size*/
-        font-size:25px;
+        font-size:20px;
         margin-top: 7px;
     }
 
     img{ /*Reduces the image in the logo size*/
-        height:40px;
+        height:30px;
         position:relative;
         top:8px;
     }
